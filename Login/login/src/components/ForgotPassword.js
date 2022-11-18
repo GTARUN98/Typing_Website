@@ -1,9 +1,10 @@
 import React,{useState} from 'react';
 import { Box,Grid,Container,Typography,TextField,Button,styled } from '@mui/material'
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const ForgotPassword = () =>{
     const [email,setEmail] = useState('');
+    const navigate = useNavigate();
 const sendEmail = async(e) =>{
 e.preventDefault();
 const res = await fetch('/forgotPassword',{
@@ -14,8 +15,8 @@ const res = await fetch('/forgotPassword',{
       body:JSON.stringify({
         email })
 })
-if(res.status() === 200){
-    Navigate('/login')
+if(res.status === 200){
+    navigate('/login')
 }
 else{
     console.log(`status of response in forgot password is ${res.status}`)

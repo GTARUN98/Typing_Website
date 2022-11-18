@@ -1,13 +1,6 @@
 import React,{useState} from 'react';
 import { Box,Grid,Container,Typography,TextField,Button,styled } from '@mui/material'
 import {useNavigate} from 'react-router-dom'
-const Component = styled(Box)`
-display:'flex',
-flexDirection: 'column',
-width:'25%'
-
-`
-
 
 //xs-extra small
 //sm small
@@ -77,7 +70,16 @@ const Login = () => {
         onClick={loginUser}
         style={{marginTop:"15px",marginBottom:"3px"}}>Login</Button>
          <Typography onClick={goToForgotPassword} style={{textAlign:"right",marginTop:"4px",cursor:"pointer"}}>Forgot Password?</Typography>
-
+         <div onClick={(e)=>{
+          e.preventDefault();
+          navigate('/register')}}><Typography  style={{textAlign:"center",marginTop:"10px",cursor:"pointer"}}>Not Registered?Register Here</Typography></div>
+        <Button variant="contained"
+        fullWidth
+        onClick={(e)=>{
+          e.preventDefault()
+          navigate('/homePage')
+        }}
+        style={{marginTop:"15px",marginBottom:"3px"}}>Guest Login</Button>
     </Box>
     </Container>
     

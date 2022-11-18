@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
 import { Box,Grid,Container,Typography,TextField,Button,styled } from '@mui/material'
 import {useNavigate} from 'react-router-dom'
-const Component = styled(Box)`
-display:'flex',
-flexDirection: 'column',
-width:'25%'
 
-`
 //xs-extra small
 //sm small
 //md medium
@@ -72,7 +67,7 @@ const SignUp = () => {
                 fullWidth
                 label='First Name'
                 onChange={handleInputs}
-                value={user.firstname}
+                value={user.firstName}
                 />
             </Grid>
             <Grid item xs={12} sm={6}>

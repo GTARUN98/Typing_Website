@@ -23,6 +23,25 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true
     },
+    image:{
+        data:Buffer,
+        contentType:String
+    },
+    words:{
+        type:String
+    },
+    time:{
+        type:String
+    },
+    correct:{
+        type:String
+    },
+    wrong:{
+        type:String
+    },
+    length:{
+        type:String
+    },
     tokens:[
         {
             token:{
